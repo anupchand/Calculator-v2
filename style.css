@@ -1,0 +1,281 @@
+@font-face {
+  font-family: digital-7;
+  src: url(digital-7.regular.ttf);
+}
+
+/* A Modern CSS Reset - Andy Bell - Recommended from Kevil Powell */
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.calculator {
+  display: flex;
+  position: relative;
+  top: 4rem;
+  left: auto;
+  right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  min-width: 300px;
+  background-color: rgb(222, 222, 230);
+  border: 2px solid black;
+  margin: 0px auto 0px auto;
+  padding: 1rem;
+  border-radius: 20px;
+}
+
+.displayArea {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: 2px solid hsl(0, 0%, 16%);
+  background-color: #b3b1b157;
+  width: 96%;
+  text-align: right;
+  padding: 0.5rem;
+  margin-inline: auto;
+  margin-block: 0.5rem;
+  /* border-radius: 20px; */
+}
+
+.displayArea > #history {
+  flex: 1;
+  width: 96%;
+  border-bottom: 2px solid rgba(228, 223, 223, 0.664);
+  text-align: right;
+  font-family: digital-7 !important;
+  font-size: 3.5rem;
+  padding: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.displayArea > h1 {
+  flex: 1;
+  font-family: digital-7 !important;
+  font-size: 5rem;
+  margin: 0 auto 0 auto;
+  width: 96%;
+  text-align: right;
+  letter-spacing: 1rem;
+}
+
+/* Keypad styles */
+.calculator > .keyBlock {
+  /* border: 1px solid green; */
+  width: 96%;
+  padding: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: hsla(0, 1%, 61%, 0.678);
+}
+
+.row {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+button,
+.numButton,
+.oprButton {
+  justify-content: space-around;
+  background-color: #ffeb3b;
+  border: none;
+  /* margin: 0.5em; */
+  flex: 1;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  text-decoration: none;
+  font-size: 4rem;
+  cursor: pointer;
+  border-radius: 20px;
+  padding: 0.1em 0.3em;
+}
+
+#clearButton,
+#product {
+  justify-content: space-between;
+  margin: 0.7rem;
+  flex: 1;
+}
+
+#clearButton {
+  margin-right: auto;
+}
+
+.oprButton {
+  background-color: hsl(22, 94%, 43%) !important;
+}
+
+#clearButton {
+  background-color: #d41515 !important;
+  float: left !important;
+}
+
+#answer {
+  background-color: #21a70a !important;
+}
+
+.numButton:hover,
+.oprButton:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+/*
+@media only screen and (max-width: 425px) {
+  #clearButton,
+  #product {
+    flex: 0.19;
+  }
+
+  #clearButton {
+    margin-left: 7px;
+  }
+  #product {
+    margin-right: 7px;
+  }
+
+  button,
+  .numButton,
+  .oprButton {
+    margin: 7px;
+  }
+
+  .displayArea > #history {
+    font-size: 3vw;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #clearButton,
+  #product {
+    flex: 0.22;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  #clearButton,
+  #product {
+    flex: 0.214;
+  }
+  #clearButton {
+    margin-left: 20px;
+  }
+  #product {
+    margin-right: 20px;
+  }
+  button,
+  .numButton,
+  .oprButton {
+    margin: 20px;
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  #clearButton,
+  #product {
+    justify-content: space-between;
+    flex: 0.221;
+  }
+
+  #clearButton {
+    margin-left: 30px;
+  }
+  #product {
+    margin-right: 30px;
+  }
+
+  button,
+  .numButton,
+  .oprButton {
+    margin: 30px;
+  }
+}
+
+.blink {
+  animation: blinker 0.7s linear 2;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+*/

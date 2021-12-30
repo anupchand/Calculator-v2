@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Calculator</title>
+    <meta name="author" content="">
+    <meta name="This is an arithmetic calculator" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <main class="calculator">
+
+        <section class="displayArea">
+            <p class="topDisplay" id="history">0</p>
+            <h1 class="blink" id="lcdScreen">Welcome</h1>
+        </section>
+
+        <section class="keyBlock">
+
+            <div class="row">
+                <button class="oprButton" type="button" id="clearButton">C</button>
+                <button class="oprButton" type="button" id="product" onclick="takeOperators(this.id)">*</button>
+            </div>
+
+            <div class="row">
+                <button class="numButton" type="button" id="7" onclick="takeNumbers(this.id)">7</button>
+                <button class="numButton" type="button" id="8" onclick="takeNumbers(this.id)">8</button>
+
+                <button class="numButton" type="button" id="9" onclick="takeNumbers(this.id)">9</button>
+                <button class="oprButton" type="button" id="sum" onclick="takeOperators(this.id)">+</button>
+            </div>
+
+            <div class="row">
+                <button class="numButton" type="button" id="4" onclick="takeNumbers(this.id)">4</button>
+                <button class="numButton" type="button" id="5" onclick="takeNumbers(this.id)">5</button>
+                <button class="numButton" type="button" id="6" onclick="takeNumbers(this.id)">6</button>
+                <button class="oprButton" type="button" id="difference" onclick="takeOperators(this.id)">-</button>
+            </div>
+
+            <div class="row">
+                <button class="numButton" type="button" id="1" onclick="takeNumbers(this.id)">1</button>
+                <button class="numButton" type="button" id="2" onclick="takeNumbers(this.id)">2</button>
+                <button class="numButton" type="button" id="3" onclick="takeNumbers(this.id)">3</button>
+                <button class="oprButton" type="button" id="division" onclick="takeOperators(this.id)">/</button>
+            </div>
+
+            <div class="row">
+                <button class="numButton" type="button" id="0" onclick="takeNumbers(this.id)">0</button>
+                <button class="numButton" type="button" id="00" onclick="takeNumbers(this.id)">00</button>
+                <button class="numButton" type="button" id="decimal" onclick="takeDecimal(this.id)">.</button>
+                <button class="oprButton" type="button" id="answer">=</button>
+            </div>
+
+        </section>
+
+    </main> <!-- closing div calculator.............-->
+
+    <script src="./calculator.js"></script>
+
+</body>
+
+</html>
