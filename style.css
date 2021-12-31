@@ -210,3 +210,13 @@ button,
     font-size: 12px;
   }
 }
+
+/* Animations */
+.blink {
+  animation: blinker 0.7s linear 2;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
