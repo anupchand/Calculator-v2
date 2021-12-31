@@ -81,6 +81,9 @@ select {
   }
 }
 
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
 .calculator {
   top: 4rem;
   max-width: 600px;
@@ -105,50 +108,39 @@ select {
 /* History Screen */
 .displayArea > #history {
   width: 96%;
-  border-bottom: 2px solid rgba(228, 223, 223, 0.664);
   text-align: right;
   font-family: digital-7 !important;
-  font-size: 3.5rem;
-  padding: 0.5rem;
-  margin-left: auto;
-  margin-right: auto;
+  border-bottom: 2px solid rgba(228, 223, 223, 0.664);
+  font-size: 2rem;
+  /* margin-left: auto;
+  margin-right: auto; */
 }
 
 /* Main Screen */
 .displayArea > h1 {
-  font-family: digital-7 !important;
-  font-size: 3.5rem;
-  margin: 0 auto 0 auto;
   width: 96%;
   text-align: right;
-  letter-spacing: 1rem;
+  font-family: digital-7 !important;
+  font-size: 4rem;
+  /* margin: 0 auto 0 auto; */
+  /* letter-spacing: 1rem; */
 }
 
 /* Keypad styles */
 .calculator > .keyBlock {
   width: 96%;
-  padding: 0.2rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin-inline: auto;
+  padding: 1rem;
   background-color: hsla(0, 1%, 61%, 0.678);
-}
-
-.row {
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 1rem;
-  margin-bottom: 1rem;
-}
-.row :nth-last-child() {
-  margin-bottom: 0;
 }
 
 button,
 .numButton,
 .oprButton {
-  font-size: 3.5rem;
+  font-size: 3rem;
   text-align: center;
   text-decoration: none;
   color: rgb(0, 0, 0);
@@ -156,28 +148,52 @@ button,
   border: none;
   cursor: pointer;
   border-radius: 20px;
-  padding: 0;
-  margin: 0;
-  flex: 1;
 }
 
-#clearButton,
+.row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
 #product {
+  grid-column: 4;
+}
+
+/* hide the asterix on the product and / on division*/
+#product::before,
+#division::before {
+  text-align: center;
   margin: 0;
   padding: 0;
+  z-index: 10;
+  position: absolute;
+  color: black;
+  top: 0;
+  left: 38%;
+}
+
+#division,
+#product {
+  position: relative;
+  color: hsl(22, 94%, 43%);
+}
+
+#product::before {
+  content: "x";
+}
+
+#division::before {
+  content: "÷";
 }
 
 #clearButton {
-  margin-right: auto;
+  grid-column: 1/3;
+  background-color: #d41515 !important;
 }
 
 .oprButton {
   background-color: hsl(22, 94%, 43%) !important;
-}
-
-#clearButton {
-  background-color: #d41515 !important;
-  /* float: left !important; */
 }
 
 #answer {
