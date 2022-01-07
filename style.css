@@ -170,7 +170,7 @@ button,
   position: absolute;
   color: black;
   top: 0;
-  left: 38%;
+  left: 37.5%;
 }
 
 #division,
@@ -184,7 +184,7 @@ button,
 }
 
 #division::before {
-  content: "÷";
+  content: "\00F7";
 }
 
 #clearButton {
