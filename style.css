@@ -180,7 +180,7 @@ button,
 }
 
 #product::before {
-  content: "x";
+  content: "\00D7";
 }
 
 #division::before {
