@@ -109,6 +109,20 @@ function takeOperators(activeOprID) {
 }
 
 // Answer button -------------
+
+const reveal = function () {
+  //console.log(`count = ${ansCount}`);
+  if (oprCount === 1) {
+    historyScreen.insertAdjacentText("beforeend", ` ${mainLcd.innerText}`);
+    problem = historyScreen.innerText;
+    //console.log(problem);
+    //console.log(eval(problem));
+    mainLcd.innerText = `${eval(problem)}`;
+  }
+  ansCount = 1;
+  oprCount = 0;
+};
+
 document.getElementById("answer").onclick = function showAnswer() {
   //console.log(`count = ${ansCount}`);
   if (oprCount === 1) {
@@ -126,3 +140,8 @@ document.getElementById("answer").onclick = function showAnswer() {
 /* added files to tracking for git */
 
 // adding decimal on aswers not working
+
+// Press Esc key to clear screen
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") clearThyScreen();
+});

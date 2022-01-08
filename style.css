@@ -1,3 +1,7 @@
+/* :root {
+  color-scheme: light dark;
+} */
+
 @font-face {
   font-family: digital-7;
   src: url(digital-7.regular.ttf);
@@ -97,7 +101,7 @@ html {
 
 .displayArea {
   border: 2px solid hsl(0, 0%, 16%);
-  background-color: #b3b1b157;
+  background-color: hsla(0, 1%, 74%, 0.719);
   width: 96%;
   text-align: right;
   padding: 0.5rem;
@@ -218,5 +222,14 @@ button,
 @keyframes blinker {
   50% {
     opacity: 0;
+  }
+}
+
+/* For light and dark color preference */
+
+@media (prefers-color-scheme: dark) {
+  .displayArea {
+    background-color: hsla(0, 0%, 0%, 0.91);
+    color: #fff;
   }
 }
