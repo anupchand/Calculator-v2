@@ -40,34 +40,43 @@ function takeNumbers(activeID) {
   activeButton = document.getElementById(activeID);
   checkDecimal();
 
+  // Level 1
   if (ansCount === 0) {
     if (mainLcd.innerText === "0" || mainLcd.innerText === "Welcome") {
       mainLcd.innerText = activeButton.innerText;
     } else {
       mainLcd.insertAdjacentText("beforeend", activeButton.innerText);
     }
+
+    // Level 1
   } else if (ansCount === 1) {
-    if (oprCount === 0 && !hasDecimal) {
-      mainLcd.innerText = activeButton.innerText;
-    } else if (oprCount === 0 && hasDecimal) {
-      mainLcd.insertAdjacentText("beforeend", activeButton.innerText);
-    } else if (oprCount === 1 && Number(mainLcd.innerText) === 0) {
-      mainLcd.innerText = activeButton.innerText;
-    } else if (oprCount === 1 && Number(mainLcd.innerText) !== 0) {
-      mainLcd.insertAdjacentText("beforeend", activeButton.innerText);
+    /// ------ Level 2 ------
+    if (oprCount === 0) {
+      if (!hasDecimal) {
+        mainLcd.innerText = activeButton.innerText;
+      } else if (hasDecimal) {
+        mainLcd.insertAdjacentText("beforeend", activeButton.innerText);
+      }
+      /// ------ Level 2 ------
+    } else if (oprCount === 1) {
+      if (mainLcd.innerText === "0" && mainLcd.innerText !== "0.") {
+        mainLcd.innerText = activeButton.innerText;
+      } else if (mainLcd.innerText === "0.") {
+        mainLcd.insertAdjacentText("beforeend", activeButton.innerText);
+      } else if (Number(mainLcd.innerText) !== 0) {
+        mainLcd.insertAdjacentText("beforeend", activeButton.innerText);
+      }
     }
   }
-  // else if (hasDecimal) {
-  //   mainLcd.insertAdjacentText("beforeend", activeButton.innerText);
-  // }
 }
 
 // For decimal value =============
 function takeDecimal(activeID) {
   activeButton = document.getElementById(activeID);
   checkDecimal();
+
   if (hasDecimal) return;
-  console.log(hasDecimal);
+
   if (!hasDecimal) {
     if (Number(mainLcd.innerText) === 0 || mainLcd.innerText === "Welcome") {
       mainLcd.innerText = "0.";
@@ -83,7 +92,7 @@ function takeDecimal(activeID) {
 function takeOperators(activeOprID) {
   hLength = historyScreen.innerText.length;
   activeOpr = document.getElementById(activeOprID);
-
+  checkDecimal();
   if (hLength === 1 && ansCount === 0 && mainLcd.innerText !== `Welcome`) {
     historyScreen.innerText = `${mainLcd.innerText} ${activeOpr.innerText}`;
     hLength = historyScreen.innerText.length;
@@ -97,6 +106,7 @@ function takeOperators(activeOprID) {
   }
 
   mainLcd.innerText = "0";
+
   hLength = historyScreen.innerText.length;
   oprCount = 1;
 }
@@ -108,6 +118,8 @@ document.getElementById("answer").onclick = function showAnswer() {
     problem = historyScreen.innerText;
     mainLcd.innerText = `${eval(problem)}`;
   }
+  checkDecimal();
+
   ansCount = 1;
   oprCount = 0;
 };

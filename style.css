@@ -99,6 +99,7 @@ html {
   border-radius: 20px;
 }
 
+/* Display area */
 .displayArea {
   border: 2px solid hsl(0, 0%, 16%);
   background-color: hsla(0, 1%, 74%, 0.719);
@@ -106,7 +107,7 @@ html {
   text-align: right;
   padding: 0.5rem;
   margin-inline: auto;
-  margin-block: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 /* ============== History Screen ============== */
@@ -127,6 +128,32 @@ html {
   font-family: digital-7 !important;
   font-size: 4rem;
   letter-spacing: 0.1em;
+}
+
+/* Name bar */
+.name {
+  width: 96%;
+  margin-inline: auto;
+  padding-block: 0.3rem;
+}
+
+.name p {
+  margin-inline: auto;
+  width: fit-content;
+  font-size: 2rem;
+  background-image: linear-gradient(90deg, rgb(0, 0, 0), rgb(214, 214, 214));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 900;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.name p::after {
+  content: " ™";
+  color: #000;
 }
 
 /* Keypad styles */
@@ -179,7 +206,7 @@ button,
 #division,
 #product {
   position: relative;
-  color: hsl(22, 94%, 43%);
+  color: hsla(22, 94%, 43%, 0);
 }
 
 #product::before {
@@ -203,9 +230,19 @@ button,
   background-color: #21a70a !important;
 }
 
-.numButton:hover,
-.oprButton:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+.btn-push {
+  position: relative;
+  top: 0px;
+  text-decoration: none;
+  box-shadow: 0px 5px 0px #585656;
+  transition: All 250ms ease;
+}
+/*==========  Active State  ==========*/
+.btn-push:active {
+  position: relative;
+  top: 5px;
+  box-shadow: none !important;
+  transition: All 250ms ease;
 }
 
 @media screen and (max-width: 500px) {
