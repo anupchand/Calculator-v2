@@ -230,6 +230,7 @@ button,
   background-color: #21a70a !important;
 }
 
+/* button push animation */
 .btn-push {
   position: relative;
   top: 0px;
@@ -253,7 +254,7 @@ button,
 
 /* Animations */
 .blink {
-  animation: blinker 0.7s linear 2;
+  animation: blinker 0.4s linear 2;
 }
 @keyframes blinker {
   50% {
