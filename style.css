@@ -109,7 +109,7 @@ html {
   margin-block: 0.5rem;
 }
 
-/* History Screen */
+/* ============== History Screen ============== */
 .displayArea > #history {
   width: 96%;
   text-align: right;
@@ -120,14 +120,13 @@ html {
   margin-right: auto; */
 }
 
-/* Main Screen */
+/* ============== Main Screen ============== */
 .displayArea > h1 {
   width: 96%;
   text-align: right;
   font-family: digital-7 !important;
   font-size: 4rem;
-  /* margin: 0 auto 0 auto; */
-  /* letter-spacing: 1rem; */
+  letter-spacing: 0.1em;
 }
 
 /* Keypad styles */
