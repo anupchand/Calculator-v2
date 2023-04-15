@@ -4,7 +4,7 @@
 
 <br>
 <br>
-<a href="https://calc-v2-anup.netlify.app/" target="_blank">Clik here for live demo</a>
+<a href="https://calc-v2-anup.netlify.app/">Clik here for live demo</a>
 
 This project is an update to my first project. Refinement to the initial calculator i built with JavaScript.
 
